@@ -1,0 +1,162 @@
+body
+{
+    --bgColor-light: #934bc9;
+
+    background: radial-gradient(circle,rgba(110, 29, 131, 1) 0%, rgba(26, 6, 29, 1) 100%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pageContainer
+{
+    height: 75%;
+    width: 90%;
+
+    display: flex;
+    /*background-color: brown;*/
+
+    mask-mode: alpha;
+    mask-image: linear-gradient(90deg,transparent 0%, white 10%, white 90%, transparent 100%);
+    
+
+    overflow: scroll;
+    overflow-y: visible;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    margin: auto;
+}
+
+.inputPage
+{
+    border-radius: 20px;
+    text-align: center;
+    flex:none;
+    margin: 10px;
+    aspect-ratio: 1.6;
+    box-sizing: border-box;  
+    padding: 35px;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    background-color: var(--bgColor-light);
+    color: white;
+
+    transition: 500ms;
+
+    container-type: inline-size;
+}
+
+.spacerPage
+{
+    /*background-color: aqua;*/
+    flex:none;
+    width: 20%;
+}
+
+.inputPage[selected="false"]
+{
+    width: 40%;
+    filter: brightness(70%);
+}
+
+.inputPage[selected="true"]
+{
+    width: calc(60% - 20px);
+    filter: brightness(100%);
+}
+
+.inputField > input[type="number"],input[type="password"]
+{
+    height: 3cqw;
+    font-size: 2cqw;
+    color: white;
+
+    background-color: transparent;
+    border: 2px solid rgba(110, 29, 131, 1);
+    border-radius: 5px;
+    outline: none;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.inputField > label
+{
+    font-size: 2cqw;
+}
+
+.inputField
+{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addable, .addable ~ hr
+{
+    display: none;
+}
+
+hr
+{
+    border: 2px solid white;
+    border-radius: 1px;
+}
+
+.hoverable:hover
+{
+    font-weight: bold;
+}
+
+#add_field_button
+{
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    
+    background-color: rgba(110, 29, 131, 1);
+
+    font-size: 2cqw;
+    color: white;
+    text-align: center;
+
+    user-select: none;
+}
+
+#summ_display{
+    float: left;
+    font-size: 2cqw;
+}
+
+.pageButton
+{
+    width: 150px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    
+    background-color: var(--bgColor-light);
+
+    font-size: 25px;
+    color: white;
+    text-align: center;
+
+    user-select: none;
+}
+
+#previouse_page_button
+{
+    float: left;
+}
+
+#next_page_button
+{
+    float: right;
+}

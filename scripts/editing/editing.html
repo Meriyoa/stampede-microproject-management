@@ -1,0 +1,64 @@
+<html>
+    <head lang="de">
+        <meta charset="UTF-8">
+        <title>Editing</title>
+        <link rel="stylesheet" href="editing.css">
+    </head>
+    <body>
+        <div id="pageContainer">
+            <div class="spacerPage"></div>
+            <div class="inputPage" id="page_1" selected="true">
+                <hr>
+                <div class="inputField" id="input_field_1">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <hr>
+                <div class="inputField" id="input_field_2">
+                    <label for="num_input_1">Input: </label>
+                    <input type="number" id="num_input_1" name="num_input_1">
+                </div>
+                <hr>
+                <div class="inputField" id="input_field_3">
+                    <label for="num_input_2">Input: </label>
+                    <input type="number" id="num_input_2" name="num_input_2">
+                </div>
+                <hr>
+                <div class="inputField" id="input_field_4">
+                    <label for="num_input_3">Input: </label>
+                    <input type="number" id="num_input_3" name="num_input_3">
+                </div>
+                <hr>
+
+                    
+                <div class="inputField addable" id="input_field_5">
+                    <label for="num_input_4">Input: </label>
+                    <input type="number" id="num_input_4" name="num_input_4">
+                </div>
+                <hr>
+                <div class="inputField addable" id="input_field_6">
+                    <label for="num_input_5">Input: </label>
+                    <input type="number" id="num_input_5" name="num_input_5">
+                </div>
+                <hr>
+                <div class="inputField addable" id="input_field_7">
+                    <label for="num_input_6">Input: </label>
+                    <input type="number" id="num_input_6" name="num_input_6">
+                </div>
+                <hr>
+
+                <div id="add_field_button">Add Field</div>
+
+                <p id="summ_display">Summe: </p>
+            </div>
+            <div class="inputPage" id="page_2" selected="false">
+                
+            </div>
+            <div class="spacerPage"></div>
+        </div>
+        <div class="pageButton" id="previouse_page_button">Previous</div>
+        <div class="pageButton" id="next_page_button">Next</div>
+
+        <script src="editing.js"></script>
+    </body>
+</html>
