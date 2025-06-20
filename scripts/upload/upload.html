@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head lang="de">
+        <meta charset="UTF-8">
+        <title>Upload Page</title>
+        <link rel="stylesheet" href="upload.css">
+    </head>
+
+    <body>
+        <div id="settings">
+            <div id="button_settings" class="Button1">
+                <img src="./../../assets/upload/document.png" alt="settings">
+            </div>
+            <div id="list_settings" class="SmallList">
+                <hr>
+                <div><p>Konto</p></div>
+                <hr>
+                <div><p>Sprache</p></div>
+                <hr>
+                <div><p>Logout</p></div>
+                <hr>
+            </div>
+        </div>
+        <div id="button_new" class="Button2">
+            <img src="./../../assets/upload/document.png" alt="">
+            <p>Neu</p>
+        </div>
+        
+        <div id="list_sort" class="SmallList">
+            <p>Sortieren nach</p>
+            <hr>
+            <div id="button_sort_name"><p>Name</p></div>
+            <hr>
+            <div id="button_sort_last"><p>Zuletzt genutzt</p></div>
+            <hr>
+            <div id="button_sort_size"><p>Dateigröße</p></div>
+            <hr>
+        </div>
+
+        <div id="list_file_settings" class="SmallList">
+            <p>Sonstiges</p>
+            <hr>
+            <div id="button_file_setting_duplicate"><p>Duplizieren</p></div>
+            <hr>
+            <div id="button_file_setting_rename"><p>Umbenennen</p></div>
+            <hr>
+            <div id="button_file_setting_delete"><p>Löschen</p></div>
+            <hr>
+        </div>
+        
+        <div id="button_sort" class="Button1"><img src="./../../assets/upload/document.png" alt="filter"></div>
+        <div id="list_files">
+            <div class="File">
+                <p>Datei 1</p>
+                <div class="ButtonFileSettings Button1" id="button_file_settings_1"><img src="./../../assets/upload/document.png" alt="einstellungen"></div>
+                <div class="ButtonFilePin Button1" id="button_file_pin_1"><img src="./../../assets/upload/document.png" alt="pin"></div>
+            </div>
+            <div class="File">
+                <p>Datei 2</p>
+                <div class="ButtonFileSettings Button1"  id="button_file_settings_2"><img src="./../../assets/upload/document.png" alt="einstellungen"></div>
+                <div class="ButtonFilePin Button1" id="button_file_pin_2"><img src="./../../assets/upload/document.png" alt="pin"></div>
+            </div>
+            <div class="File">
+                <p>Datei 3</p>
+                <div class="ButtonFileSettings Button1"  id="button_file_settings_3"><img src="./../../assets/upload/document.png" alt="einstellungen"></div>
+                <div class="ButtonFilePin Button1" id="button_file_pin_3"><img src="./../../assets/upload/document.png" alt="pin"></div>
+            </div>
+        </div>
+
+        <script src="upload.js"></script>
+    </body>
+</html>

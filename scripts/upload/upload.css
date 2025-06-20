@@ -1,0 +1,163 @@
+:root{
+    --space-big: 40px;
+    --space-mid: 8px;
+    --space-small: 4px;
+
+    --border-radius: 10px;
+
+    --color-button-1: #944BC9;
+    --color-button-2: #733B9F;
+    --color-icons-1: #FFF;
+    --color-icons-2: #733B9F;
+
+    background: #3F3F3F;
+    /* background: radial-gradient(circle,rgba(95, 26, 112, 1) 0%, rgba(53, 15, 61, 1) 50%, rgba(0, 0, 0, 1) 100%); */
+
+    user-select: none;
+}
+
+body{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: var(--color-icons-1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Button1{
+    background-color: var(--color-button-1);
+    border-radius: var(--border-radius);
+    aspect-ratio: 1;
+}
+
+.Button2{
+    background-color: var(--color-button-2);
+    border-radius: var(--border-radius);
+    width: 100%;
+}
+
+#button_new{
+    height: 60px;
+    margin-top: 200px;
+    margin-bottom: var(--space-big);
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: var(--space-mid);
+}
+
+#button_new > p{
+    margin-left: var(--space-mid);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#button_sort{
+    margin-bottom: var(--space-mid);
+    width: fit-content;
+}
+
+#button_sort > img{
+    width: 30px;
+}
+
+#list_files{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 500px;
+}
+
+.File{
+    display: flex;
+    flex: none;
+    background-color: var(--color-button-2);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--space-small);
+    box-sizing: border-box;
+    padding: var(--space-small);
+}
+
+.ButtonFilePin{
+    margin-left: var(--space-small);
+}
+
+.ButtonFilePin > img{
+    width: 30px;
+}
+
+.ButtonFileSettings{
+    margin-left: auto;
+}
+
+.ButtonFileSettings > img{
+    width: 30px;
+}
+
+.File > p{
+    margin-left: var(--space-mid);
+    line-height: 0;
+}
+
+.SmallList{
+    --width: 170px;
+
+    position: absolute;
+    box-sizing: border-box;
+    padding: var(--space-mid);
+    border-radius: var(--border-radius);
+    width: var(--width);
+    background-color: var(--color-button-2);
+
+    display: none;
+}
+
+.SmallList > :first-child{
+    opacity: 0.6;
+}
+
+.SmallList p {
+    line-height: 0;
+    margin-top: var(--space-big);
+    margin-inline-start: var(--space-small);
+}
+
+hr{
+    border: 1px solid var(--color-button-1);
+}
+
+#list_sort{
+    transform: translateX(calc(-1 * (var(--width) + var(--space-mid))));
+}
+
+#list_file_settings{
+    transform: translateX(calc(50cqw + var(--space-mid)));
+}
+
+#button_settings > img{
+    width: 30px;
+}
+
+#button_settings{
+    background-color: transparent;
+    width: fit-content;
+}
+
+#settings{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0 0 var(--border-radius) 0;
+    background-color: var(--color-button-1);
+}
+
+#list_settings{
+    background-color: transparent;
+    position: relative;
+}
+
+#list_settings hr{
+    border: 1px solid var(--color-button-2);
+    opacity: 1;
+}
