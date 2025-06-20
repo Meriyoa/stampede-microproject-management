@@ -1,30 +1,15 @@
-const pageContainer = document.getElementById("pageContainer");
+const pageContainer = document.getElementById("page_container");
 const pages = document.getElementsByClassName("inputPage");
-const prev = document.getElementById("previouse_page_button");
-const next = document.getElementById("next_page_button");
-const addFieldButton = document.getElementById("add_field_button");
+const buttonPrev = document.getElementById("button_previouse_page");
+const buttonNext = document.getElementById("button_next_page");
+const buttonAddPayGrpoupTVL = document.getElementById("button_add_pay_group_tvl");
 
-var inputFields = document.getElementsByClassName("inputField");
-var addableFields = document.getElementsByClassName("addable");
-var numberFields = document.querySelectorAll("input[type='number']");
+var inputFields = Array.from(document.getElementsByClassName("inputField"));
+let payGroupsTVL = Array.from(document.getElementsByClassName("payGroupTvl"));
 
 var selectedPage = 0;
-var visibleInputFields = 0;
 
-numberFields.forEach(function(currentValue){
-    currentValue.addEventListener('input', updateSum);
-});
-
-function updateSum(){
-    var sum = 0;
-    numberFields.forEach(function(currentValue){
-        sum += currentValue.valueAsNumber ? currentValue.valueAsNumber : 0;
-    });
-
-    document.getElementById("summ_display").innerHTML = "Summe: " + sum;
-}
-
-function updateWindows(prevSel)
+function _updateWindows(prevSel)
 {
     switch(selectedPage)
     {
@@ -37,12 +22,12 @@ function updateWindows(prevSel)
         default:
             break;
     }
-    scrollToWindow(pages[selectedPage], pages[prevSel]);
+    _scrollToWindow(pages[selectedPage], pages[prevSel]);
     pages[prevSel].setAttribute("selected","false");
     pages[selectedPage].setAttribute("selected","true");
 }
 
-function scrollToWindow(element, prevElement)
+function _scrollToWindow(element, prevElement)
 {
     var toScroll = element.offsetLeft; //position des element
 
@@ -59,20 +44,29 @@ function scrollToWindow(element, prevElement)
 }
 
 //Buttons
-prev.addEventListener('click', function(){
+buttonPrev.addEventListener('click', function(){
     var temp = selectedPage;
     selectedPage--;
-    updateWindows(temp);
+    _updateWindows(temp);
 });
 
-next.addEventListener('click', function(){
+buttonNext.addEventListener('click', function(){
     var temp = selectedPage;
     selectedPage++;
-    updateWindows(temp);
+    _updateWindows(temp);
 });
 
-addFieldButton.addEventListener('click', function(){
-    addableFields[visibleInputFields].style.display = "flex";
-    addableFields[visibleInputFields].nextElementSibling.style.display = "block";
-    visibleInputFields++;
+buttonAddPayGrpoupTVL.addEventListener('click', function(){
+    let nextGroup = document.getElementsByClassName("payGroupTvl")[0].cloneNode(true);
+
+    Array.from(nextGroup.getElementsByClassName("inputField")).forEach(function(element) {
+        element.setAttribute("id", element.getAttribute("id").slice(0, -1) + payGroupsTVL.length);
+        element.firstElementChild.setAttribute("for", element.firstElementChild.getAttribute("for").slice(0, -1) + payGroupsTVL.length);
+        element.firstElementChild.nextElementSibling.setAttribute("id", element.firstElementChild.nextElementSibling.getAttribute("id").slice(0, -1) + payGroupsTVL.length);
+        element.firstElementChild.nextElementSibling.setAttribute("name", element.firstElementChild.nextElementSibling.getAttribute("name").slice(0, -1) + payGroupsTVL.length);
+    });
+
+    nextGroup.getElementsByClassName("inputField")[0].
+
+    document.getElementById("page_staff_costs_tvl").appendChild(nextGroup);
 });

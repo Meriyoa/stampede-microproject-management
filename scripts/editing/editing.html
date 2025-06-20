@@ -7,59 +7,204 @@
         <link rel="stylesheet" href="editing.css">
     </head>
     <body>
-        <div id="pageContainer">
+
+        <div id="page_container">
             <div class="spacerPage"></div>
-            <div class="inputPage" id="page_1" selected="true">
+            <div class="inputPage" id="page_project_information" selected="true" data-key="projektinfo">
                 <hr>
-                <div class="inputField" id="input_field_1">
-                    <label for="password">Password: </label>
-                    <input type="password" id="password" name="password">
+                <div class="inputField" id="input_project_title" data-key="projekttitel">
+                    <label for="project_title">Projekttitel: </label>
+                    <input type="text" id="project_title" name="project_title">
                 </div>
                 <hr>
-                <div class="inputField" id="input_field_2">
-                    <label for="num_input_1">Input: </label>
-                    <input type="number" id="num_input_1" name="num_input_1">
+                <div class="inputField" id="input_client" data-key="auftraggeber">
+                    <label for="client">Auftraggeber: </label>
+                    <input type="text" id="client" name="client">
                 </div>
                 <hr>
-                <div class="inputField" id="input_field_3">
-                    <label for="num_input_2">Input: </label>
-                    <input type="number" id="num_input_2" name="num_input_2">
+                <div class="inputField" id="input_manager" data-key="projektleiter">
+                    <label for="manager">Projektleiter/-in: </label>
+                    <input type="text" id="manager" name="manager">
                 </div>
                 <hr>
-                <div class="inputField" id="input_field_4">
-                    <label for="num_input_3">Input: </label>
-                    <input type="number" id="num_input_3" name="num_input_3">
+                <div class="inputField" id="input_duration" data-key="projektlaufzeit">
+                    <label for="duration">Projektlaufzeit: </label>
+                    <div>
+                        <label for="duration">von: </label>
+                        <input type="date" id="duration_from" name="duration[]" placeholder="von">
+                    </div>
+                    <div>
+                        <label for="duration">bis: </label>
+                        <input type="date" id="duration_to" name="duration[]" placeholder="bis">
+                    </div>
                 </div>
                 <hr>
-
-                    
-                <div class="inputField addable" id="input_field_5">
-                    <label for="num_input_4">Input: </label>
-                    <input type="number" id="num_input_4" name="num_input_4">
+                <div class="inputField" id="input_ecom_area" data-key="wirtschaftlicher_bereich">
+                    <label for="ecom_area">Wirtschaftlicher Bereich: </label>
+                    <input type="text" id="ecom_area" name="ecom_area">
                 </div>
                 <hr>
-                <div class="inputField addable" id="input_field_6">
-                    <label for="num_input_5">Input: </label>
-                    <input type="number" id="num_input_5" name="num_input_5">
+                <div class="inputField" >
+                    <div  id="input_faculty" data-key="fakultaet">
+                        <label for="faculty">Fakultät: </label>
+                        <input type="text" id="faculty" name="faculty">
+                    </div>
+                    <div id="input_cost_center" data-key="kostenstelle">
+                        <label for="cost_center">Kostenstelle: </label>
+                        <input type="text" id="cost_center" name="cost_center">
+                    </div>
                 </div>
                 <hr>
-                <div class="inputField addable" id="input_field_7">
-                    <label for="num_input_6">Input: </label>
-                    <input type="number" id="num_input_6" name="num_input_6">
+                <div class="inputField" id="input_cost_unit_number" data-key="kostentraegernummer">
+                    <label for="cost_unit_number">Projekt- / Kostenträgernummer: </label>
+                    <input type="number" id="cost_unit_number" name="cost_unit_number">
                 </div>
                 <hr>
-
-                <div id="add_field_button">Add Field</div>
-
-                <p id="summ_display">Summe: </p>
             </div>
-            <div class="inputPage" id="page_2" selected="false">
+
+            <div class="inputPage" id="page_staff_costs_tvl" selected="false" data-key="personalkosten_tvl">
+                <hr>
+                <div class="payGroupTvl">
+                    <div class="inputField" id="input_pay_group_tvl_0" data-key="entgeldgruppe">
+                        <label for="pay_group_tvl_0">Entgeldgruppe: </label>
+                        <select id="pay_group_tvl_0" name="pay_group_tvl_0">
+                            <option value="" disabled selected hidden>Gruppe Auswählen</option>
+                            <option value="1">Entgeld-Gr TV-L 1-4</option>
+                            <option value="5">Entgeld-Gr TV-L 5-8</option>
+                            <option value="9">Entgeld-Gr TV-L 9-12</option>
+                            <option value="13">Entgeld-Gr TV-L 13-15</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_qantity_tvl_0" data-key="anzahl">
+                        <label for="qantity_tvl_0">Anzahl: </label>
+                        <input type="number" id="qantity_tvl_0" name="qantity_tvl_0">
+                        <span>Pers.</span>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_hours_tvl_0" data-key="stunden">
+                        <label for="hours_tvl_0">Stunden: </label>
+                        <input type="number" id="hours_tvl_0" name="hours_tvl_0">
+                        <span>St.</span>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_rate_tvl_0" data-key="stundensatz">
+                        <label for="rate_tvl_0">Stundensatz: </label>
+                        <input type="number" id="rate_tvl_0" name="rate_tvl_0">
+                        <span>€</span>
+                    </div>
+                    <hr>
+                </div>
+                <div id="button_add_pay_group_tvl" class="button_add_pay_group">neue Entgeldgruppe</div>
+            </div>
+
+            <div class="inputPage" id="page_staff_costs_swhk" selected="false" data-key="personalkosten_shk_whk">
+                <hr>
+                <div class="payGroupSWHK" data-key="entgeldgruppen">
+                    <div class="inputField" id="input_pay_group_swhk_0" data-key="hilfskraft">
+                        <label for="pay_group_swhk_0">Hilfskraftart: </label>
+                        <select id="pay_group_swhk_0" name="pay_group_swhk_0">
+                            <option value="" disabled selected hidden>Gruppe Auswählen</option>
+                            <option value="shk">SHK</option>
+                            <option value="whk">WHK</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_qantity_swhk_0" data-key="anzahl">
+                        <label for="qantity_swhk_0">Anzahl: </label>
+                        <input type="number" id="qantity_swhk_0" name="qantity_swhk_0">
+                        <span>Pers.</span>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_hours_swhk_0" data-key="stunden">
+                        <label for="hours_swhk_0">Stunden: </label>
+                        <input type="number" id="hours_swhk_0" name="hours_swhk_0">
+                        <span>St.</span>
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_rate_swhk_0" data-key="stundensatz">
+                        <label for="rate_swhk_0">Stundensatz: </label>
+                        <input type="number" id="rate_swhk_0" name="rate_swhk_0">
+                        <span>€</span>
+                    </div>
+                    <hr>
+                </div>
+                <div id="button_add_pay_group_swhk" class="button_add_pay_group">neue Hilfskraftgruppe</div>
+            </div>
+
+            <div class="inputPage" id="page_other_accounts" selected="false" data-key="andere_kosten">
+                <hr>
+                <div class="materialCost" data-key="sachkosten">
+                    <div class="inputField" id="input_cost_name_material_0" data-key="sachkostenname">
+                        <label for="cost_name_material_0">Sachkostenname: </label>
+                        <input type="text" id="cost_name_material_0" name="cost_name_material_0">
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_cost_material_0" data-key="kosten">
+                        <label for="cost_material_0">Kosten: </label>
+                        <input type="number" id="cost_material_0" name="cost_material_0">
+                        <span>€</span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="inputField" id="display_total_material" data-key="gesamt">
+                    <label for="total_material">Gesamt: </label>
+                    <span id="total_material">Auto. Generiert</span>
+                    <span>€</span>
+                </div>
+                <hr>
+                <div id="button_add_material_cost" class="button_add_material_cost">neuer Sachkostenbetrag</div>
+                <hr>
+                <div class="driveCost" data-key="fahrtkosten">
+                    <div class="inputField" id="input_cost_name_drive_0" data-key="fahrtkostenname">
+                        <label for="cost_name_drive_0">Farhtkostenname: </label>
+                        <input type="text" id="cost_name_drive_0" name="cost_name_drive_0">
+                    </div>
+                    <hr>
+                    <div class="inputField" id="input_cost_drive_0" data-key="kosten">
+                        <label for="cost_drive_0">Kosten: </label>
+                        <input type="number" id="cost_drive_0" name="cost_drive_0">
+                        <span>€</span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="inputField" id="display_total_drive" data-key="gesamt">
+                    <label for="total_drive">Gesamt: </label>
+                    <span id="total_drive">Auto. Generiert</span>
+                    <span>€</span>
+                </div>
+                <hr>
+                <div id="button_add_drive_cost" class="button_add_drive_cost">neuer Fahrtkostenbetrag</div>
+                <hr>
                 
+            </div>
+
+            <div class="inputPage" id="page_offer" selected="false" data-key="angebot">
+                <hr>
+                <div class="inputField" id="input_offer_price" data-key="angebotspreis">
+                    <label for="offer_price">Angebotspreis: </label>
+                    <input type="number" id="offer_price" name="offer_price">
+                    <span>€</span>
+                </div>
+                <hr>
+                <div class="inputField" id="input_tax" data-key="mehrwertsteuer">
+                    <label for="tax">Angebotspreis: </label>
+                    <input type="number" id="tax" name="tax">
+                    <span>%</span>
+                </div>
+                <hr>
+                <div id="button_final_confirm">Abschlussbestätigung</div>
+                <div class="inputField" id="input_confirm_date" data-key="datum">
+                    <label for="confirm_date">Datum: </label>
+                    <input type="date" id="confirm_date" name="confirm_date">
+                </div>
+                <hr>
             </div>
             <div class="spacerPage"></div>
         </div>
-        <div class="pageButton" id="previouse_page_button">Previous</div>
-        <div class="pageButton" id="next_page_button">Next</div>
+        
+        <div class="pageButton" id="button_previouse_page">Previous</div>
+        <div class="pageButton" id="button_next_page">Next</div>
 
         <script src="editing.js"></script>
     </body>
